@@ -72,4 +72,6 @@
    * Instance Methods
    * Static Method
    * Code Blocks
- 
+### ThreadLocal
+ * allows us to store data that will be accessible only by a specific thread.
+ * 

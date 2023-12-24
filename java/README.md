@@ -74,4 +74,25 @@
    * Code Blocks
 ### ThreadLocal
  * allows us to store data that will be accessible only by a specific thread.
+ * ThreadLocal vs ThreadPool should be extra careful when using them together, should cleanups last time for that thread local in the pool, that read will be reuse on next time.
+### Kill java Thread
+ * Use Flag
+ * Interrupt
+### Difference between run() and start() method in thread
+ * start(): create a new thread and code inside run() is executed in the new thread.
+ * run() no new thread is created and code inside method is executed in the current thread.
+### Wait and Notify In Thread
+ * the current thread must own the object's monitor and execute synchronized instance method, body of a block or synchronized static method.
+ * wait: force the current thread to wait until some other thread invokes notify() or notifyAll() on the same object.
+   * notify or notifyAll(): for walking up threads that are waiting for access to this object's monitor.
+### Wait and Sleep
+ * wait: only be called from a synchronized block. It releases the lock on the object so that another thread can jump in and acquired a lock.
+ * Sleep: a static method called from any context. it pauses the current thread and does not release any locks.
+### Join() Thread
+ * the calling thread goes into a waiting state
+### Difference between Daemon and User Threads
+ * User threads are high-priority threads, JVM will wait for any user thread to complete its task before terminating it.
+ * Daemon threads are low-priority threads whose only role is to provide the services to user thread.
+ * Daemon thread serves for user thread and only need while user threads are running. they wont prevent the JVM from exiting once all user threads have finished their execution.
+ * Daemon threads are useful for background supporting task such as garbage collection, releasing memory of unused objects abd removing unwanted entries from the cache. Most of the JVM threads are demon threads.
  * 
